@@ -14,7 +14,7 @@ nasneのAPIで録画済み番組の一覧取得ではなく、録画予定番組
 * SLACK_TOKEN
   * Slackの設定から発行したトークン。適切な権限が必要。
 * SLACK_CHANNEL
-  * 通知するチェンネル名を指定。ハッシュタグ記号は不要。
+  * 通知するチャンネル名を指定。ハッシュタグ記号は不要。
 
 ```
 docker run -d -e NASNE_NOTIFIER_HOST=192.168.0.1 \
