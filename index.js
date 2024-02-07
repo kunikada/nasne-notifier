@@ -32,7 +32,7 @@ class Message {
 
     toPost() {
         return {
-            channel: this.channel,
+            channel: `#${this.channel}`,
             blocks: [
                 {
                     type: 'header',
