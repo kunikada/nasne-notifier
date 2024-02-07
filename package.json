@@ -1,0 +1,26 @@
+{
+  "name": "nasne-notifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kunikada/nasne-notifier.git"
+  },
+  "author": "kunikada",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kunikada/nasne-notifier/issues"
+  },
+  "homepage": "https://github.com/kunikada/nasne-notifier#readme",
+  "dependencies": {
+    "@slack/web-api": "^7.0.1",
+    "cron": "^3.1.6",
+    "dotenv": "^16.4.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  }
+}
