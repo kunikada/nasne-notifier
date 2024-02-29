@@ -6,11 +6,11 @@ const { WebClient } = require('@slack/web-api');
 const web = process.env.SLACK_TOKEN ? new WebClient(process.env.SLACK_TOKEN) : undefined;
 
 class Program {
-    constructor(title, description, startDateTime, duration) {
-        this.title = title;
-        this.description = description;
-        this.startAt = new Date(startDateTime);
-        this.duration = duration;
+    constructor(item) {
+        this.title = item.title;
+        this.description = item.description;
+        this.startAt = new Date(item.startDateTime);
+        this.duration = item.duration;
     }
 
     startedWithin(minutes) {
@@ -79,7 +79,7 @@ const nasne = new Nasne(process.env.NASNE_NOTIFIER_HOST);
 const nasneJob = new CronJob(`0 */${process.env.NASNE_NOTIFIER_INTERVAL} * * * *`, async () => {
     const reservedList = await nasne.fetch('reservedListGet');
     reservedList.item.forEach(item => {
-        const program = new Program(item.title, item.description, item.startDateTime, item.duration);
+        const program = new Program(item);
         if (program.startedWithin(Number(process.env.NASNE_NOTIFIER_INTERVAL))) {
             post(program);
         }
